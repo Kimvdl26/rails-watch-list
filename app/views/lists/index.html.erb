@@ -1,0 +1,17 @@
+<div class="cover mb-4 d-flex align-items-center justify-content-center">
+<h1>Save any movies </h1>
+</div>
+<%# <h3>Your lists</h3> %>
+<div>
+<% @lists.each do |list| %>
+  <%= link_to list_path(list) do %>
+    <h3><%= list.name %></h3>
+  <% end %>
+  <br>
+<% end %>
+</div>
+
+<%= simple_form_for @list do |f| %>
+  <%= f.input :name %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

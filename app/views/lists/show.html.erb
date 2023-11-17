@@ -1,0 +1,13 @@
+<h1><%= @list.name %></h1>
+<%= link_to "Add a bookmark", new_list_bookmark_path(@list) %>
+
+<% @list.bookmarks.each do |bookmark| %>
+  <div style="background-color: green; color: white">
+    <%# i am a bookmark my id is <%= bookmark.id the movie im referencing is movie_id <%= bookmark.movie.id %>
+    <%= bookmark.movie.title %> |
+    <%= bookmark.comment %>
+    <%= link_to 'Destroy', bookmark_path(bookmark),
+            style: "color: pink",
+            data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+  </div>
+<% end %>
