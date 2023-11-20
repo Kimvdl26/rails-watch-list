@@ -29,3 +29,4 @@ movies.each do |movie|
     rating: movie["vote_average"],
   )
 end
+#  This is the API which will give us a whole list of movies that will be displayed in our web app.
